@@ -1,0 +1,155 @@
+<div ng-controller="formCtrl">
+    <!-- Application form details -
+1.School Year     
+2.Grade or Standard applied for
+3.Student's Name
+4.Date of Birth 
+5.Student Photograph
+6.Gender
+7.Nationality
+8.Current Address    
+9.Caste
+10.Religion -->
+    <style type="text/css">
+        .error {
+            color: red;
+            font-size: 1.1em;
+        }
+
+        .calender-btn {
+            padding: 6px;
+            pointer-events: none;
+        }
+    </style>
+    <div ng-controller="formCtrl as vm">
+        <h3 style="text-align: center;"> Student Application Form
+        </h3>
+        <!-- Full Name, Email Id, Contact Number, Address,Sex,State,City,DOB. -->
+        <form class="form-horizontal" name='appForm'>
+            <div class="form-group">
+                <label class="control-label col-sm-4" for="name">Full Name:</label>
+                <div class="col-sm-5">
+                    <input type="text" class="form-control" id="name" ng-model="app_name" placeholder="Enter full name">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="app_schyear" class="control-label col-sm-4">School Year:</label>
+                <div class="col-sm-5">
+                    <select class="form-control" id="app_schyear">
+                        <option value="">Select Year</option>
+                        <option value="" ng-repeat="year in schoolYears">{{year}}</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="app_standard" class="control-label col-sm-4">Select Standard:</label>
+                <div class="col-sm-5">
+                    <select class="form-control" id="app_standard">
+                        <option value="1">1st Standard</option>
+                        <option value="2">2nd Standard</option>
+                        <option value="3">3rd Standard</option>
+                        <option value="4">4th Standard</option>
+                        <option value="5">5th Standard</option>
+                        <option value="6">6th Standard</option>
+                        <option value="7">7th Standard</option>
+                        <option value="8">8th Standard</option>
+                        <option value="9">9th Standard</option>
+                        <option value="10">10th Standard</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="photo-datepicker" class="control-label col-sm-4">Birth Dtae:</label>
+                <div class="input-group date col-sm-5" id="datepicker" data-date-format="yyyy-mm-dd">
+                    <input class="form-control" id="date-id" type="text" />
+                    <div class="input-group-btn">
+                        <button class="btn btn-default calender-btn" type="button">
+                            <i class="fa fa-calendar"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="app_gender" class="control-label col-sm-4">Select gender:</label>
+                <div class="col-sm-5">
+                    <select class="form-control" id="app_gender">
+                        <option value="female">Female</option>
+                        <option value="male">Male</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-sm-4" for="comment">Address:</label>
+                <div class="col-sm-5">
+                    <textarea class="form-control" rows="5" id="comment" ng-model="app_address"
+                        placeholder="Enter Address"></textarea>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="app_nationality" class="control-label col-sm-4">Nationality:</label>
+                <div class="col-sm-5">
+                    <select class="form-control" id="app_nationality">
+                        <option value="female">Indian</option>
+                        <option value="male">foreigner</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="app_religion" class="control-label col-sm-4">Religion:</label>
+                <div class="col-sm-5">
+                    <select class="form-control" id="app_religion">
+                        <option value="Hindu">Hindu</option>
+                        <option value="Christian">Christian </option>
+                        <option value="Sikh">Sikh</option>
+                        <option value="Buddh">Buddh </option>
+                        <option value="Jain">Jain</option>
+                        <option value="Islam">Islam </option>
+                        <option value="Other">Other </option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="app_caste" class="control-label col-sm-4">Caste:</label>
+                <div class="col-sm-5">
+                    <select class="form-control" id="app_caste">
+                        <option value="female">OBC</option>
+                        <option value="male">Open</option>
+                        <option value="female">SC</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="app_image" class="control-label col-sm-4">Photo:</label>
+                <div class="col-sm-5">
+                    <input type="file" class="form-control-file form-control-sm" id='photofiles' />
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <div class="col-sm-offset-4 col-sm-5">
+                    <button type="submit" style="float: left;" class="btn-success" ng-click='submitApplication()'
+                        ng-disabled="appForm.$invalid">Apply</button>
+                </div>
+            </div>
+
+        </form>
+        <script>
+            $(document).ready(function () {
+                $(function () {
+                    $("#datepicker").datepicker({
+                        autoclose: true,
+                        todayHighlight: true
+                    }).datepicker('update', new Date());
+                });
+                $('#my-datepicker').datepicker('setDate', 'now');
+            });
+        </script>
+
+    </div>
+</div>

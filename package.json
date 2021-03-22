@@ -1,0 +1,35 @@
+{
+  "name": "mean-grunt",
+  "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/scotch-io/mean-grunt.git"
+  },
+  "scripts": {
+    "start": "grunt"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
+    "express": "^4.9.0",
+    "express-session": "^1.15.0",
+    "grunt-contrib-jshint": "^0.12.0",
+    "jsonwebtoken": "^7.1.10",
+    "moment": "^2.29.1",
+    "mongodb": "^2.2.22",
+    "nodemailer": "^6.5.0",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0",
+    "save": "^2.4.0"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.5",
+    "grunt-concurrent": "~0.5.0",
+    "grunt-contrib-cssmin": "~0.10.0",
+    "grunt-contrib-less": "~0.11.0",
+    "grunt-contrib-uglify": "~0.4.0",
+    "grunt-contrib-watch": "~0.6.1",
+    "grunt-nodemon": "^0.4.2"
+  }
+}

@@ -1,0 +1,39 @@
+<style type="text/css">
+  .error {
+    color: red;
+    font-size: 1.1em;
+  }
+
+ 
+  .loginCls {
+    margin: 80px;
+  }
+</style>
+<div class="loginCls" ng-controller="loginCtrl as vm">
+  <h4 style="text-align: center;">Login Here</h4>
+  <form class="form-horizontal" name='userForm'>
+    <div class="form-group">
+      <label class="control-label col-sm-4" for="email">Email:</label>
+      <div class="col-sm-5">
+        <input type="email" class="form-control" id="email" name="usremail" ng-model="emailId" placeholder="Enter email"
+          required>
+        <span class="error" data-ng-show="userForm.usremail.$error.email">Not valid email!</span>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-4" for="pwd">Password:</label>
+      <div class="col-sm-5">
+        <input type="password" class="form-control" id="pwd" ng-model="password" placeholder="Enter password">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-sm-offset-4 col-sm-5">
+        <button type="submit" style="float: left;" class="btn-success" ng-click='login()'
+          ng-disabled="userForm.$invalid">Login</button>
+        <a style="float: right;text-decoration: underline;" ui-sref="signup">New Student? Register Here!</a>
+      </div>
+    </div>
+
+  </form>
+</div>
