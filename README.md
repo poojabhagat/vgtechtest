@@ -1,1 +1,2 @@
 # vgtechtest
+MEAN Stack assignment
