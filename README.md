@@ -14,7 +14,7 @@ Important Steps:
    in "global.transporter" varible. Update the auth values.
 
 Command To Run The Application
-1. Using grunt, you will get live updates of code change
+1. Using grunt, you will get live updates of code change :
 grunt --force
 
 2. Using node server.js - if you change any file you need to restart node server manually each time.

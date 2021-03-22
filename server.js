@@ -20,8 +20,8 @@ var db;
 global.transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-        user: 'bhagatpooja1@gmail.com',
-        pass: 'sfuroqbsoupqborf'
+        user: '**********@gmail.com',
+        pass: '***************'
     }
 });
 
