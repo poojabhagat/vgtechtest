@@ -18,7 +18,7 @@ router.route('/registration')
             if (err) {
                 res.status(400).send(err);
             } else {
-                console.log(data)
+                //console.log(data)
                 if (data == null || data.length == 0) {
                     stdObj.insertOne(req.body, function (err, result) {
                         if (err) {
